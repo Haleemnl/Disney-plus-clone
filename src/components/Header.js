@@ -3,7 +3,7 @@ import React, { useEffect } from 'react'
 import styled from 'styled-components'
 // IMPORT Auth and provider from firebase
 import { auth, provider } from '../firebase'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, Navigate, useNavigate } from 'react-router-dom'
 
 // import select & useSelector
 import {
@@ -23,7 +23,7 @@ export default function Header() {
     const dispatch = useDispatch()
     const userName = useSelector(selectUserName)
     const userPhoto = useSelector(selectUserPhoto)
-    const history = useNavigate()
+    const navigate = useNavigate();
 
     useEffect(() => {
 
@@ -37,7 +37,7 @@ export default function Header() {
                     photo: user.photoURL
 
                 }))
-                history.push('/')
+                navigate('/')
             }
 
         })
@@ -62,7 +62,7 @@ export default function Header() {
 
                 }))
 
-                history.push('/')
+                navigate('/')
             })
     }
 
@@ -71,7 +71,7 @@ export default function Header() {
         auth.signOut()
             .then(() => {
                 dispatch(setSignOut())
-                history.push('/login')
+                navigate('/login')
             })
     }
 
