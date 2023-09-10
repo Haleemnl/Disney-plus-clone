@@ -79,7 +79,9 @@ export default function Header() {
     return (
         <Nav>
 
-            <Logo src='/images/logo.svg' />
+            <Link to='/'>
+                <Logo src='/images/logo.svg' />
+            </Link>
             {
 
                 !userName ?
