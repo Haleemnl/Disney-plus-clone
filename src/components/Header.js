@@ -149,7 +149,7 @@ background-color: black;
 height: 70px;
 display: flex;
 align-items: center;
-padding: 0 36px;
+padding: 0 35px;
 overflow-x: hidden;
 `
 
